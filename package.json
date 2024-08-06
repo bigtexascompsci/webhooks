@@ -1,0 +1,27 @@
+{
+  "name": "webhooks",
+  "version": "0.0.0",
+  "author": "Ayush Kumar",
+  "description": "dialogflow cx webhooks for chatbots",
+  "engines": {
+    "node": ">=18.11",
+    "pnpm": ">=7.27"
+  },
+  "scripts": {
+    "dev": "pnpm /dev:.*/",
+    "dev:build": "esbuild dev.ts ./src --bundle --outdir=dist --packages=external --platform=node --sourcemap --watch",
+    "dev:run": "node --inspect -r ./dist/dev.js --watch dist/src",
+    "build": "esbuild index=./src --bundle --minify --outdir=dist --packages=external --platform=node",
+    "start": "node dist"
+  },
+  "dependencies": {
+    "esbuild": "^0.19.11",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.11.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
